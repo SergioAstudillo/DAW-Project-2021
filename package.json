@@ -23,7 +23,7 @@
 		"build": "craco build",
 		"test": "craco test",
 		"eject": "react-scripts eject",
-		"tryDB": "node ./src\\backend\\mongoDB.js"
+		"tryDB": "nodemon ./src\\backend\\index.js"
 	},
 	"eslintConfig": {
 		"extends": [
@@ -42,5 +42,8 @@
 			"last 1 firefox version",
 			"last 1 safari version"
 		]
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.7"
 	}
 }
