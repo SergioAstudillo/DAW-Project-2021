@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 /* Import the different components of our app. */
