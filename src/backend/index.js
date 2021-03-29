@@ -5,7 +5,7 @@ const app = express();
 require('dotenv').config();
 
 /* Starts the server and listen for changes. */
-app.listen(3000, () => {
+app.listen(4000, () => {
 	console.log(`Servidor corriendo en el puerto ${process.env.PORT}`);
 });
 
