@@ -17,7 +17,7 @@ class Navbar extends React.Component {
 	render() {
 		const { isActive } = this.state;
 		return (
-			<nav className='bg-white w-full h-14 relative'>
+			<nav className='bg-gray-200 w-full h-14 relative border-b-2 border-gray-900 border-opacity-100'>
 				<div className='w-full h-full flex items-center relative'>
 					<img src={logoNavbar} alt='Logotipo' className='min-h-40 max-h-40 w-1/2 m-4 absolute justify-self-start -left-10'></img>
 					{/* 
@@ -27,7 +27,7 @@ class Navbar extends React.Component {
 					<div className={`tham tham-e-squeeze tham-w-6 absolute justify-self-right right-4 m-2 hover:cursor-pointer ${isActive ? 'tham-active' : ''}`} onClick={this.toggleHamburgerMenu} aria-expanded={`${isActive ? 'true' : 'false'}`}>
 						<div className='tham-box'>
 							<div className='tham-inner' />
-							<div className={`origin-top-right absolute right-0 mt-6 w-56 rounded-lg shadow-lg bg-white bg-opacity-100 ring-1 ring-gray-500 ring-opacity-100 focus:outline-none ${isActive ? 'visible' : 'invisible'}`}>
+							<div className={`origin-top-right absolute right-0 mt-6 w-56 rounded-lg shadow-lg bg-gray-200 opacity-100 bg-opacity-100 ring-1 ring-gray-500 ring-opacity-100 ${isActive ? 'visible' : 'invisible'}`}>
 								<div className='py-5'>
 									<a className='block uppercase px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900'>inicio</a>
 									<a className='block uppercase px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900'>productos</a>
@@ -44,26 +44,3 @@ class Navbar extends React.Component {
 }
 
 export default Navbar;
-
-/* 
-			<nav className='bg-white flex justify-start items-center w-full h-14'>
-				<img src={logoNavbar} alt='Logotipo' className='w-1/2 m-4'></img>
-				<div className={`tham tham-e-squeeze tham-w-6 justify-end m-2 hover:cursor-pointer ${isActive ? 'tham-active' : ''}`} onClick={this.toggleHamburgerMenu}>
-					<div className='tham-box'>
-						<div className='tham-inner' />
-					</div>
-				</div>
-				<a href='/' className='m-1 font-bold'>
-					Inicio
-				</a>
-				<a href='/productos' className='m-1 font-bold'>
-					Productos
-				</a>
-				<a href='/personas' className='m-1 font-bold'>
-					Personas
-				</a>
-				<a href='/newsletter' className='m-1 font-bold'>
-					Newsletter
-				</a>
-			</nav>
-*/

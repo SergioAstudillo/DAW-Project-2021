@@ -7,9 +7,6 @@ function App() {
 	return (
 		<div className='App w-full'>
 			<Navbar></Navbar>
-			<div className='bg-gray-500'>
-				<p>Hola</p>
-			</div>
 		</div>
 	);
 }
