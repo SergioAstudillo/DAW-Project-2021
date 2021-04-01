@@ -5,12 +5,14 @@ const db = require('../connectionDB');
 
 const router = express.Router();
 
-router.get('/get', (req, res) => {
+const cors = require('cors');
+const { whitelist, corsOptions } = require('./cors');
+
+router.get('/get', cors(corsOptions), (req, res) => {
 	db.connect();
 	peopleModel
 		.find({})
 		.then(result => {
-			console.log(`Personas encontradas en la BD: \n${result}`);
 			res.json(result);
 			db.close();
 		})

@@ -9,6 +9,7 @@
 		"@testing-library/react": "^11.1.0",
 		"@testing-library/user-event": "^12.1.10",
 		"autoprefixer": "9",
+		"cors": "^2.8.5",
 		"dotenv": "^8.2.0",
 		"mongoose": "^5.12.1",
 		"postcss": "7",
@@ -23,7 +24,7 @@
 		"build": "craco build",
 		"test": "craco test",
 		"eject": "react-scripts eject",
-		"tryDB": "nodemon ./src\\backend\\index.js"
+		"api": "nodemon ./src\\backend\\index.js"
 	},
 	"eslintConfig": {
 		"extends": [

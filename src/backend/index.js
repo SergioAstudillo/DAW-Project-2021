@@ -5,8 +5,8 @@ const app = express();
 require('dotenv').config();
 
 /* Starts the server and listen for changes. */
-app.listen(4000, () => {
-	console.log(`Servidor corriendo en el puerto ${process.env.PORT}`);
+app.listen(process.env.BACKEND_PORT, () => {
+	console.log(`Servidor corriendo en el puerto ${process.env.BACKEND_PORT}`);
 });
 
 //Import the API for each collection.

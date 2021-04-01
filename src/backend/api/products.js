@@ -5,7 +5,10 @@ const db = require('../connectionDB');
 
 const router = express.Router();
 
-router.get('/get', (req, res) => {
+const cors = require('cors');
+const { whitelist, corsOptions } = require('./cors');
+
+router.get('/get', cors(corsOptions), (req, res) => {
 	db.connect();
 	productsModel
 		.find({})
@@ -16,7 +19,7 @@ router.get('/get', (req, res) => {
 		.catch(err => console.error(err));
 });
 
-router.post('/add', (req, res) => {
+router.post('/add', cors(corsOptions), (req, res) => {
 	db.connect();
 	const product = new productsModel({
 		title: req.body.title,

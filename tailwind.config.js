@@ -6,6 +6,15 @@ module.exports = {
 			scale: {
 				25: '.25',
 			},
+			colors: {
+				custom: {
+					darkEnf: '#f48ca0',
+				},
+			},
+			fontFamily: {
+				nunito: ['Nunito', 'sans-serif'],
+				josefin: ['Josefin Sans', 'sans-serif'],
+			},
 		},
 	},
 	variants: {

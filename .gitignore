@@ -11,6 +11,10 @@
 # production
 /build
 img
+logos
+portraits
+products
+fonts
 
 # misc
 .DS_Store
