@@ -12,9 +12,10 @@
 /build
 img
 logos
-portraits
-products
-fonts
+/public/assets/img
+/src/assets/portraits
+/src/assets/products
+/src/assets/fonts
 
 # misc
 .DS_Store

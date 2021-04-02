@@ -6,14 +6,15 @@ const db = require('../connectionDB');
 const router = express.Router();
 
 const cors = require('cors');
-const { whitelist, corsOptions } = require('./cors');
+const { corsOptions } = require('./cors');
 
 router.get('/get', cors(corsOptions), (req, res) => {
 	db.connect();
 	productsModel
 		.find({})
 		.then(result => {
-			console.log(`Productos encontrados en la BD: \n${result}`);
+			res.json(result);
+			//console.log(`Productos encontrados en la BD: \n${result}`);
 			db.close();
 		})
 		.catch(err => console.error(err));
