@@ -26,18 +26,17 @@ class Products extends React.Component {
 							<h1 className='text-xl uppercase underline' key={`title-${index}`}>
 								{product.title}
 							</h1>
-							<img src={product.img}></img>
-							<p className='text-sm' key={`description-${index}`}>
+							<img className='block mx-auto' src={product.img} alt={product.title} key={`image-${index}`}></img>
+							<p className='text-sm my-3' key={`description-${index}`}>
 								{product.description}
 							</p>
-							<p className='text-sm' key={`flavor-${index}`}>
-								Sabores: {product.flavor}
+							<p className='text-sm mb-3' key={`flavor-${index}`}>
+								<span className='underline'>Sabores:</span> {product.flavor}
 							</p>
 							<p className='text-sm' key={`price-${index}`}>
-								Precio: {product.price}€
+								<span className='underline'>Precio:</span> {product.price}€
 							</p>
 						</div>
-						//TODO: Style this better (maybe using <span> inside the <p>) and add images of the products.
 					))}
 				</section>
 			);

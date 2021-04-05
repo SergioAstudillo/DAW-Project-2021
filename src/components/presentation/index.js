@@ -1,5 +1,4 @@
 import React from 'react';
-import ownerPortrait from '../../assets/portraits/ownerPortrait.png';
 
 class PresentationCard extends React.Component {
 	constructor(props) {

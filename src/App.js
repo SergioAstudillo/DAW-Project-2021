@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/navbar';
 import PresentationCard from './components/presentation';
 import Products from './components/products';
+import People from './components/people';
 
 function App() {
 	return (
@@ -18,7 +19,9 @@ function App() {
 					<Route exact path='/productos'>
 						<Products></Products>
 					</Route>
-					<Route exact path='/personas'></Route>
+					<Route exact path='/personas'>
+						<People></People>
+					</Route>
 					<Route exact path='/newsletter'></Route>
 				</Switch>
 			</div>
