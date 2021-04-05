@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import logoNavbar from './../../assets/logos/logotipoNavbar.svg';
-
 class Navbar extends React.Component {
 	constructor(props) {
 		super(props);
@@ -20,7 +18,7 @@ class Navbar extends React.Component {
 		return (
 			<nav className='bg-gray-200 w-full h-14 relative border-b-2 border-gray-900 border-opacity-100'>
 				<div className='w-full h-full flex items-center relative'>
-					<img src={logoNavbar} alt='Logotipo' className='min-h-40 max-h-40 w-1/2 m-4 absolute justify-self-start -left-10'></img>
+					<img src={'./../../assets/logos/logotipoNavbar.svg'} alt='Logotipo' className='min-h-40 max-h-40 w-1/2 m-4 absolute justify-self-start -left-10'></img>
 					{/* 
 				 Tamaños: tham-w-4, tham-w-6, tham-w-8, tham-w-12.
 				 Colores: You can set a color of hamburger menu by adding class to element with tham-inner class name. For example: bg-indigo-500, bg-green-300, bg-gray-900.

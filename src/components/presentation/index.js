@@ -26,6 +26,7 @@ class PresentationCard extends React.Component {
 					name: person.name,
 					surname: person.surname,
 					description: person.description,
+					img: person.img,
 				};
 			}
 		});
@@ -37,7 +38,7 @@ class PresentationCard extends React.Component {
 			return (
 				<section className='w-full mt-5 font-josefin'>
 					<h1 className='text-xl uppercase underline'>Bienvenido/a a mi web.</h1>
-					<img src={ownerPortrait} alt='Foto personal' className='w-1/2 h-1/2 rounded-full block mx-auto mt-3 mb-3 border-8 border-custom-darkEnf border-opacity-50'></img>
+					<img src={owner.img} alt='Foto personal' className='w-1/2 h-1/2 rounded-full block mx-auto mt-3 mb-3 border-8 border-custom-darkEnf border-opacity-50'></img>
 					<div className=''>
 						<h1 className='text-xl'>
 							{owner.name} {owner.surname}

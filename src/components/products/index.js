@@ -26,6 +26,7 @@ class Products extends React.Component {
 							<h1 className='text-xl uppercase underline' key={`title-${index}`}>
 								{product.title}
 							</h1>
+							<img src={product.img}></img>
 							<p className='text-sm' key={`description-${index}`}>
 								{product.description}
 							</p>
