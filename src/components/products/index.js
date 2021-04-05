@@ -17,6 +17,11 @@ class Products extends React.Component {
 			});
 	}
 
+	replaceDot = price => {
+		let priceString = price.toString();
+		return priceString.replace('.', ',');
+	};
+
 	render() {
 		if (this.state.isLoading === false) {
 			return (
@@ -34,7 +39,7 @@ class Products extends React.Component {
 								<span className='underline'>Sabores:</span> {product.flavor}
 							</p>
 							<p className='text-sm' key={`price-${index}`}>
-								<span className='underline'>Precio:</span> {product.price}€
+								<span className='underline'>Precio:</span> {this.replaceDot(product.price)}€ (una vez somos socios/as con el descuento base del 25%. Incluye seguimiento personalizado.)
 							</p>
 						</div>
 					))}
