@@ -25,13 +25,11 @@ class PresentationCard extends React.Component {
 					name: person.name,
 					surname: person.surname,
 					description: person.description,
+					shortDescription: person.shortDescription,
 					img: person.img,
 				};
 			}
 		});
-
-		const pageDescription =
-			'Aquí podrás ver los distintos productos que distribuyo a través de Herbalife. También podrás conocer un poco más de las personas que trabajan en este proyecto y suscribirte a una newsletter a través de la cual recibirás noticias sobre productos y demás temas de interés.';
 
 		if (this.state.isLoading === false) {
 			return (
@@ -42,7 +40,7 @@ class PresentationCard extends React.Component {
 						<h1 className='text-xl'>
 							{owner.name} {owner.surname}
 						</h1>
-						<p className='text-sm mx-5'>{/* {owner.description} */ pageDescription}</p>
+						<p className='text-sm mx-5'>{owner.shortDescription}</p>
 					</div>
 				</section>
 			);
