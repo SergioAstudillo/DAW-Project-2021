@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class NewsletterForm extends React.Component {
 	constructor(props) {
@@ -19,7 +20,7 @@ class NewsletterForm extends React.Component {
 		const userValidatedMessage = `Su email ya ha sido registrado y verificado. Le/a avisaremos de próximas novedades en el correo electrónico proporcionado.
 		¡Muchas gracias!`;
 		const userNotValidatedMessage = `Su email ya ha sido registrado, pero todavía no ha verificado su identidad.
-		Por favor, revise su correo electrónico.`;
+		Por favor, revise el correo electrónico proporcionado.`;
 		const firstRegister = `Revise el email de verificación enviado a la siguiente dirección de correo electrónico: ${this.state.email}.
 		Puede seguir navegando por la web si lo desea.`;
 
@@ -53,21 +54,28 @@ class NewsletterForm extends React.Component {
 
 	render() {
 		const { email, message } = this.state;
-		let style = '';
+		let styleFirstParagraph = '';
+		let styleButton = 'my-2 h-6 max-h-10 bg-custom-darkEnf text-white tex uppercase px-3 rounded-3xl border border-gray-600';
+		let styleLink = 'hidden';
 		if (message !== '') {
-			style = 'my-3 mx-3 whitespace-pre-line';
+			styleFirstParagraph = 'mt-2 mx-3 whitespace-pre-line';
+			styleButton += ' hidden';
+			styleLink = 'my-2 py-1 text-center bg-custom-darkEnf text-white uppercase px-3 rounded-3xl border border-gray-600 inline-block';
 		} else {
-			style = '';
+			styleFirstParagraph = '';
 		}
 
 		return (
-			<section className='w-screen h-1/2 font-josefin'>
+			<section className='w-screen h-1/2 font-josefin mt-5'>
 				<form className='bg-gray-200 w-3/4 mx-auto border-2 border-gray-600 rounded-xl' onSubmit={this.handleSubmit}>
-					<p className={style}>{message}</p>
-					<p className='py-2 underline uppercase'>Email:</p>
+					<p className={styleFirstParagraph}>{message}</p>
+					<p className='my-2 underline uppercase'>Email:</p>
 					<input className='rounded text-center w-3/4 px-3 border border-gray-600' type='email' required placeholder='email@email.com' name='email' value={email} onChange={this.handleInputChange} />
 					<br />
-					<button className='my-2 bg-custom-darkEnf text-white uppercase px-3 rounded-3xl border border-gray-600'>Suscribirse</button>
+					<Link to='/' className={styleLink}>
+						Regresar al inicio
+					</Link>
+					<button className={styleButton}>Suscribirse</button>
 				</form>
 			</section>
 		);
