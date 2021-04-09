@@ -33,7 +33,7 @@ class PresentationCard extends React.Component {
 
 		if (this.state.isLoading === false) {
 			return (
-				<section className='w-full mt-5 font-josefin'>
+				<section className='w-screen mt-5 font-josefin'>
 					<h1 className='text-xl uppercase underline'>Bienvenido/a a mi web.</h1>
 					<img src={owner.img} alt='Foto personal' className='w-1/2 h-1/2 rounded-full block mx-auto mt-3 mb-3 border-8 border-custom-darkEnf border-opacity-50'></img>
 					<div className=''>

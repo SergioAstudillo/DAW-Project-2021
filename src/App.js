@@ -6,11 +6,12 @@ import Navbar from './components/navbar';
 import PresentationCard from './components/presentation';
 import Products from './components/products';
 import People from './components/people';
+import NewsletterForm from './components/newsletter';
 
 function App() {
 	return (
 		<Router>
-			<div className='App w-full'>
+			<div className='App w-screen'>
 				<Navbar></Navbar>
 				<Switch>
 					<Route exact path='/'>
@@ -22,7 +23,9 @@ function App() {
 					<Route exact path='/personas'>
 						<People></People>
 					</Route>
-					<Route exact path='/newsletter'></Route>
+					<Route exact path='/newsletter'>
+						<NewsletterForm></NewsletterForm>
+					</Route>
 				</Switch>
 			</div>
 		</Router>

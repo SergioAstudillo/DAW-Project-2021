@@ -25,7 +25,7 @@ class Products extends React.Component {
 	render() {
 		if (this.state.isLoading === false) {
 			return (
-				<section className='products w-full my-5 font-josefin'>
+				<section className='products w-screen my-5 font-josefin'>
 					{this.state.products.map((product, index) => (
 						<div className={`product-${index} my-5 mx-5`} key={`product-${index}`}>
 							<h1 className='text-xl uppercase underline' key={`title-${index}`}>

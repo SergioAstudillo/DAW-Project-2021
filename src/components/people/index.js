@@ -20,7 +20,7 @@ class People extends React.Component {
 	render() {
 		if (this.state.isLoading === false) {
 			return (
-				<section className='people w-full my-5 font-josefin'>
+				<section className='people w-screen my-5 font-josefin'>
 					{this.state.people.map((person, index) => (
 						<div className={`person-${index} my-5 mx-5`} key={`person-${index}`}>
 							<h1 className='text-xl uppercase underline' key={`fullname-${index}`}>
