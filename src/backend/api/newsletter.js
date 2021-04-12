@@ -39,7 +39,6 @@ router.post('/add', cors(corsOptions), (req, res) => {
 	newsletter
 		.save()
 		.then(result => {
-			console.log(`Suscriptor almacenado en la BD: \n${result}`);
 			db.close();
 		})
 		.catch(err => console.error(err));

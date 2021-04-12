@@ -1,8 +1,10 @@
-//Import mongoose, express and dotenv.
-const mongoose = require('mongoose');
+//Import express and dotenv.
 const express = require('express');
 const app = express();
 require('dotenv').config();
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 /* Starts the server and listen for changes. */
 app.listen(process.env.BACKEND_PORT, () => {

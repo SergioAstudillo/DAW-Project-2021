@@ -37,7 +37,9 @@ class NewsletterForm extends React.Component {
 				method: 'POST',
 				mode: 'no-cors',
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ email: this.state.email }),
+				body: new URLSearchParams({
+					email: this.state.email,
+				}),
 			})
 				.then(result => result.json())
 				.then(info => {
