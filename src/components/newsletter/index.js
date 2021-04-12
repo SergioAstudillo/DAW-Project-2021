@@ -33,6 +33,16 @@ class NewsletterForm extends React.Component {
 			}
 		} else {
 			this.setState({ isRegistered: false, isVerified: false, isClicked: true, message: firstRegister });
+			fetch('http://localhost:3001/api/newsletter/add', {
+				method: 'POST',
+				mode: 'no-cors',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ email: this.state.email }),
+			})
+				.then(result => result.json())
+				.then(info => {
+					console.log(info);
+				});
 		}
 		this.forceUpdate();
 	};

@@ -1,5 +1,4 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const newsletterModel = require('../models/newsletter');
 const db = require('../connectionDB');
 
@@ -49,7 +48,7 @@ router.post('/add', cors(corsOptions), (req, res) => {
 router.delete('/:email', cors(corsOptions), (req, res) => {
 	db.connect();
 	newsletterModel
-		.deleteOne({ email: req.params.email })
+		.deleteOne({ email: req.body.email })
 		.then(result => {
 			res.json(result);
 			db.close();

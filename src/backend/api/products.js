@@ -1,5 +1,4 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const productsModel = require('../models/products');
 const db = require('../connectionDB');
 
