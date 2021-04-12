@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 
+//Use the integrated bodyParser to retrieve info from req.body in POST requests.
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
