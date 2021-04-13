@@ -5,7 +5,7 @@ const db = require('../connectionDB');
 const router = express.Router();
 
 const cors = require('cors');
-const { corsOptions } = require('./cors');
+const { corsOptions, whitelist } = require('./cors');
 
 router.get('/get', cors(corsOptions), (req, res) => {
 	db.connect();
@@ -31,8 +31,11 @@ router.get('/get/:email', cors(corsOptions), (req, res) => {
 
 router.post('/add', cors(corsOptions), (req, res) => {
 	db.connect();
+	const { email, name, surname } = req.body;
 	const newsletter = new newsletterModel({
-		email: req.body.email,
+		email: email,
+		name: name,
+		surname: surname,
 		subscribed: true,
 		verified: false,
 	});
@@ -40,14 +43,15 @@ router.post('/add', cors(corsOptions), (req, res) => {
 		.save()
 		.then(result => {
 			db.close();
+			//res.json(result);
 		})
 		.catch(err => console.error(err));
 });
 
-router.delete('/:email', cors(corsOptions), (req, res) => {
+router.delete('/delete/:id', cors(corsOptions), (req, res) => {
 	db.connect();
 	newsletterModel
-		.deleteOne({ email: req.body.email })
+		.deleteOne({ id: req.params.id })
 		.then(result => {
 			res.json(result);
 			db.close();

@@ -7,6 +7,8 @@ class NewsletterForm extends React.Component {
 		this.state = {
 			newsletter: [],
 			email: '',
+			name: '',
+			surname: '',
 			isRegistered: false,
 			isVerified: false,
 			isClicked: false,
@@ -33,12 +35,16 @@ class NewsletterForm extends React.Component {
 			}
 		} else {
 			this.setState({ isRegistered: false, isVerified: false, isClicked: true, message: firstRegister });
+			const nameCapitalized = this.state.name.charAt(0).toUpperCase() + this.state.name.slice(1);
+			const surnameCapitalized = this.state.surname.charAt(0).toUpperCase() + this.state.surname.slice(1);
 			fetch('http://localhost:3001/api/newsletter/add', {
 				method: 'POST',
 				mode: 'no-cors',
 				headers: { 'Content-Type': 'application/json' },
 				body: new URLSearchParams({
 					email: this.state.email,
+					name: nameCapitalized,
+					surname: surnameCapitalized,
 				}),
 			})
 				.then(result => result.json())
@@ -65,7 +71,7 @@ class NewsletterForm extends React.Component {
 	}
 
 	render() {
-		const { email, message } = this.state;
+		const { email, name, surname, message } = this.state;
 		let styleFirstParagraph = '';
 		let styleTitle = 'my-2 underline uppercase';
 		let styleInput = 'rounded text-center w-3/4 px-3 border border-gray-600';
@@ -87,6 +93,10 @@ class NewsletterForm extends React.Component {
 					<p className={styleFirstParagraph}>{message}</p>
 					<p className={styleTitle}>Email:</p>
 					<input className={styleInput} type='email' required placeholder='email@email.com' name='email' value={email} onChange={this.handleInputChange} />
+					<p className={styleTitle}>Nombre:</p>
+					<input className={styleInput} type='text' required placeholder='Nombre' name='name' value={name} onChange={this.handleInputChange} />
+					<p className={styleTitle}>Apellido:</p>
+					<input className={styleInput} type='text' required placeholder='Primer Apellido' name='surname' value={surname} onChange={this.handleInputChange} />
 					<Link to='/' className={styleLink}>
 						Regresar al inicio
 					</Link>

@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const NewsletterSchema = new mongoose.Schema(
 	{
 		email: { type: String, required: true },
+		name: { type: String, required: true },
+		surname: { type: String, required: true },
 		subscribed: { type: Boolean, required: false },
 		verified: { type: Boolean, required: false },
 	},
