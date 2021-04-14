@@ -1,6 +1,7 @@
 const express = require('express');
 const newsletterModel = require('../models/newsletter');
 const db = require('../connectionDB');
+const nodemailer = require('nodemailer');
 
 const router = express.Router();
 
@@ -42,10 +43,38 @@ router.post('/add', cors(corsOptions), (req, res) => {
 	newsletter
 		.save()
 		.then(result => {
-			db.close();
 			//res.json(result);
 		})
 		.catch(err => console.error(err));
+
+	const transporter = nodemailer.createTransport({
+		host: process.env.EMAIL_HOST,
+		port: 587,
+		secure: false,
+		auth: {
+			user: process.env.EMAIL_USER,
+			pass: process.env.EMAIL_PASSWORD,
+		},
+	});
+
+	const mailOptions = {
+		from: process.env.EMAIL_USER,
+		to: email,
+		subject: 'Correo de verificación.',
+		html: `
+		<h1>Esto es una prueba</h1>
+		`,
+	};
+
+	transporter.sendMail(mailOptions, (error, info) => {
+		if (error) {
+			//OPTIONAL:res.status(500).send(error.message);
+			console.log(`No se ha podido enviar el correo: ${error.message}`);
+		} else {
+			//OPTIONAL:res.status(200).jsonp(req.body);
+			console.log(`Se ha enviado el correo a la dirección: ${req.body.email} de forma satisfactoria.`);
+		}
+	});
 });
 
 router.delete('/delete/:id', cors(corsOptions), (req, res) => {
