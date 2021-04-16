@@ -1,6 +1,7 @@
 require('dotenv').config();
 
-const whitelist = [process.env.MAIN_URL_FRONT, process.env.PEOPLE_URL_FRONT, process.env.NEWSLETTER_URL_FRONT, process.env.PRODUCTS_URL_FRONT, process.env.NEWSLETTERVERIFIED_URL_FRONT];
+const whitelist = ['http://localhost:3000', 'http://localhost:3000/personas', 'http://localhost:3000/productos', 'http://localhost:3000/newsletter', 'http://localhost:3000/newsletterVerified', 'http://localhost:3000/newsletterUnsubscribe'];
+
 const corsOptions = {
 	origin: function (origin, callback) {
 		if (whitelist.indexOf(origin) !== -1) {

@@ -5,6 +5,7 @@ const db = require('../connectionDB');
 /* Nodemailer dependencies. */
 const firstEmail = require('./../nodemailer/verification');
 const verifiedUser = require('./../nodemailer/verifiedUser');
+const deletedUser = require('./../nodemailer/deletedUser');
 
 const router = express.Router();
 
@@ -75,13 +76,23 @@ router.put('/verify/:id', cors(corsOptions), (req, res) => {
 
 router.delete('/delete/:id', cors(corsOptions), (req, res) => {
 	db.connect();
+	let deleteUser;
 	newsletterModel
 		.findByIdAndRemove({ _id: req.params.id })
 		.then(result => {
 			res.json(result);
+			deletedUser = result;
 			db.close();
 		})
 		.catch(err => console.error(err));
+	function waitForDeletedUser() {
+		if (deleteUser) {
+			deletedUser(deleteUser.email, 'Se ha cancelado su suscripción a nuestra newsletter 😯', deleteUser.id, deleteUser.name, deleteUser.surname, '../nodemailer/views/deletedUser.html');
+		} else {
+			setTimeout(waitForDeletedUser, 250);
+		}
+	}
+	waitForDeletedUser();
 });
 
 module.exports = router;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-class NewsletterVerified extends React.Component {
+class NewsletterUnsubscribe extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -24,7 +24,7 @@ class NewsletterVerified extends React.Component {
 	componentDidMount() {
 		const ID = this.setID();
 		if (ID !== '' && typeof ID !== 'undefined') {
-			fetch(`http://localhost:3001/api/newsletter/verify/${ID}`, {
+			fetch(`http://localhost:3001/api/newsletter/delete/${ID}`, {
 				method: 'PUT',
 				mode: 'cors',
 				headers: { 'Content-Type': 'application/json' },
@@ -35,7 +35,7 @@ class NewsletterVerified extends React.Component {
 				.then(result => {
 					this.setState({ isDone: true });
 					this.setState({
-						message: `Su usuario ha sido verificado.
+						message: `Su usuario ha sido eliminado de nuestra base de datos.
                     Por favor revise el correo para más detalles.`,
 					});
 					result.json();
@@ -74,4 +74,4 @@ class NewsletterVerified extends React.Component {
 	}
 }
 
-export default NewsletterVerified;
+export default NewsletterUnsubscribe;

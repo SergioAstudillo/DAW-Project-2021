@@ -3,17 +3,15 @@ const handlebars = require('handlebars');
 const fs = require('fs');
 const path = require('path');
 
-function firstEmail(email, subject, ID, name, userSurname, relativePath) {
+function deletedUser(email, subject, ID, name, userSurname, relativePath) {
 	const filePath = path.join(__dirname, relativePath);
 	const source = fs.readFileSync(filePath, 'utf-8').toString();
 	const template = handlebars.compile(source);
-	const verificationLink = 'http://localhost:3000/newsletterVerified/' + ID;
 	const replacements = {
 		userID: ID,
 		userEmail: email,
 		userName: name,
 		userSurname: userSurname,
-		verificationLink: verificationLink,
 	};
 	const htmlToSend = template(replacements);
 	const transporter = nodemailer.createTransport({
@@ -41,4 +39,4 @@ function firstEmail(email, subject, ID, name, userSurname, relativePath) {
 	});
 }
 
-module.exports = firstEmail;
+module.exports = deletedUser;

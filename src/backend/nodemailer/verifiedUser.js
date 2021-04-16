@@ -7,7 +7,7 @@ function verifiedUser(email, subject, ID, name, userSurname, relativePath) {
 	const filePath = path.join(__dirname, relativePath);
 	const source = fs.readFileSync(filePath, 'utf-8').toString();
 	const template = handlebars.compile(source);
-	const unsubscribeLink = 'http://localhost:3001/api/newsletter/delete/' + ID;
+	const unsubscribeLink = 'http://localhost:3000/newsletterUnsubscribe/' + ID;
 	const replacements = {
 		userID: ID,
 		userEmail: email,
