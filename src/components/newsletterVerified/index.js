@@ -27,7 +27,7 @@ class NewsletterVerified extends React.Component {
 			fetch(`http://localhost:3001/api/newsletter/verify/${ID}`, {
 				method: 'PUT',
 				mode: 'cors',
-				headers: { 'Content-Type': 'application/json' },
+				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 				body: new URLSearchParams({
 					id: ID,
 				}),
@@ -41,7 +41,9 @@ class NewsletterVerified extends React.Component {
 					result.json();
 				})
 				.then(info => {
-					console.log(info);
+					if (info) {
+						console.log(info);
+					}
 				});
 		}
 	}

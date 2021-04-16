@@ -22,6 +22,10 @@ function deletedUser(email, subject, ID, name, userSurname, relativePath) {
 			user: process.env.EMAIL_USER,
 			pass: process.env.EMAIL_PASSWORD,
 		},
+		tls: {
+			secureProtocol: 'TLSv1_method',
+			rejectUnauthorized: false,
+		},
 	});
 	const mailOptions = {
 		from: process.env.EMAIL_USER,

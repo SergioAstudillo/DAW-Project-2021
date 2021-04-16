@@ -39,8 +39,8 @@ class NewsletterForm extends React.Component {
 			const surnameCapitalized = this.state.surname.charAt(0).toUpperCase() + this.state.surname.slice(1);
 			fetch('http://localhost:3001/api/newsletter/add', {
 				method: 'POST',
-				mode: 'no-cors',
-				headers: { 'Content-Type': 'application/json' },
+				mode: 'cors',
+				headers: { 'Content-Type': 'application/x-www-form-urlencoded' /* x-www-form-urlencoded */ },
 				body: new URLSearchParams({
 					email: this.state.email,
 					name: nameCapitalized,
@@ -49,7 +49,9 @@ class NewsletterForm extends React.Component {
 			})
 				.then(result => result.json())
 				.then(info => {
-					console.log(info);
+					if (info) {
+						console.log(info);
+					}
 				});
 		}
 		this.forceUpdate();

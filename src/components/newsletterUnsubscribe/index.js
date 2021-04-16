@@ -25,9 +25,9 @@ class NewsletterUnsubscribe extends React.Component {
 		const ID = this.setID();
 		if (ID !== '' && typeof ID !== 'undefined') {
 			fetch(`http://localhost:3001/api/newsletter/delete/${ID}`, {
-				method: 'PUT',
+				method: 'DELETE',
 				mode: 'cors',
-				headers: { 'Content-Type': 'application/json' },
+				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 				body: new URLSearchParams({
 					id: ID,
 				}),
@@ -41,7 +41,9 @@ class NewsletterUnsubscribe extends React.Component {
 					result.json();
 				})
 				.then(info => {
-					console.log(info);
+					if (info) {
+						console.log(info);
+					}
 				});
 		}
 	}

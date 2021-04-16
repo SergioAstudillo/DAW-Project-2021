@@ -7,7 +7,7 @@ const router = express.Router();
 const cors = require('cors');
 const { corsOptions } = require('./cors');
 
-router.get('/get', cors(corsOptions), (req, res) => {
+router.get('/get', (req, res) => {
 	db.connect();
 	productsModel
 		.find({})
@@ -19,7 +19,7 @@ router.get('/get', cors(corsOptions), (req, res) => {
 		.catch(err => console.error(err));
 });
 
-router.post('/add', cors(corsOptions), (req, res) => {
+router.post('/add', (req, res) => {
 	db.connect();
 	const product = new productsModel({
 		title: req.body.title,

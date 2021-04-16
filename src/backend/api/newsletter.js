@@ -9,10 +9,10 @@ const deletedUser = require('./../nodemailer/deletedUser');
 
 const router = express.Router();
 
-const cors = require('cors');
-const { corsOptions, whitelist } = require('./cors');
+/* const cors = require('cors');
+const { corsOptions, whitelist } = require('./cors'); */
 
-router.get('/get', cors(corsOptions), (req, res) => {
+router.get('/get', (req, res) => {
 	db.connect();
 	newsletterModel
 		.find({})
@@ -23,7 +23,7 @@ router.get('/get', cors(corsOptions), (req, res) => {
 		.catch(err => console.error(err));
 });
 
-router.post('/add', cors(corsOptions), (req, res) => {
+router.post('/add', (req, res) => {
 	db.connect();
 	const { email, name, surname } = req.body;
 	let newUserID;
@@ -39,7 +39,7 @@ router.post('/add', cors(corsOptions), (req, res) => {
 		.then(result => {
 			newUserID = result._id;
 			db.close();
-			//res.json(result);
+			res.json(result);
 		})
 		.catch(err => console.error(err));
 	function waitForNewUserID() {
@@ -52,7 +52,7 @@ router.post('/add', cors(corsOptions), (req, res) => {
 	waitForNewUserID();
 });
 
-router.put('/verify/:id', cors(corsOptions), (req, res) => {
+router.put('/verify/:id', (req, res) => {
 	db.connect();
 	let updatedUser;
 	newsletterModel
@@ -74,14 +74,14 @@ router.put('/verify/:id', cors(corsOptions), (req, res) => {
 	waitForUpdatedUser();
 });
 
-router.delete('/delete/:id', cors(corsOptions), (req, res) => {
+router.delete('/delete/:id', (req, res) => {
 	db.connect();
 	let deleteUser;
 	newsletterModel
-		.findByIdAndRemove({ _id: req.params.id })
+		.findByIdAndRemove(req.params.id)
 		.then(result => {
 			res.json(result);
-			deletedUser = result;
+			deleteUser = result;
 			db.close();
 		})
 		.catch(err => console.error(err));
