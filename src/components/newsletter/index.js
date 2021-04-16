@@ -40,7 +40,7 @@ class NewsletterForm extends React.Component {
 			fetch('http://localhost:3001/api/newsletter/add', {
 				method: 'POST',
 				mode: 'cors',
-				headers: { 'Content-Type': 'application/x-www-form-urlencoded' /* x-www-form-urlencoded */ },
+				headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
 				body: new URLSearchParams({
 					email: this.state.email,
 					name: nameCapitalized,

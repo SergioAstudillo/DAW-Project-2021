@@ -4,10 +4,10 @@ const db = require('../connectionDB');
 
 const router = express.Router();
 
-/* const cors = require('cors');
-const { corsOptions } = require('./cors'); */
+const cors = require('cors');
+const { corsOptions } = require('./cors');
 
-router.get('/get', (req, res) => {
+router.get('/get', cors(corsOptions), (req, res) => {
 	db.connect();
 	peopleModel
 		.find({})

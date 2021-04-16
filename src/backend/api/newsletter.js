@@ -9,10 +9,10 @@ const deletedUser = require('./../nodemailer/deletedUser');
 
 const router = express.Router();
 
-/* const cors = require('cors');
-const { corsOptions, whitelist } = require('./cors'); */
+const cors = require('cors');
+const { corsOptions, whitelist } = require('./cors');
 
-router.get('/get', (req, res) => {
+router.get('/get', cors(corsOptions), (req, res) => {
 	db.connect();
 	newsletterModel
 		.find({})
@@ -23,7 +23,7 @@ router.get('/get', (req, res) => {
 		.catch(err => console.error(err));
 });
 
-router.post('/add', (req, res) => {
+router.post('/add', cors(corsOptions), (req, res) => {
 	db.connect();
 	const { email, name, surname } = req.body;
 	let newUserID;
@@ -52,7 +52,7 @@ router.post('/add', (req, res) => {
 	waitForNewUserID();
 });
 
-router.put('/verify/:id', (req, res) => {
+router.put('/verify/:id', cors(corsOptions), (req, res) => {
 	db.connect();
 	let updatedUser;
 	newsletterModel
@@ -74,7 +74,7 @@ router.put('/verify/:id', (req, res) => {
 	waitForUpdatedUser();
 });
 
-router.delete('/delete/:id', (req, res) => {
+router.delete('/delete/:id', cors(corsOptions), (req, res) => {
 	db.connect();
 	let deleteUser;
 	newsletterModel
