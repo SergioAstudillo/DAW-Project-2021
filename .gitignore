@@ -19,6 +19,7 @@ img
 /src/assets/products
 /src/assets/logos
 /src/assets/img
+/src/backend/nodemailer/views
 
 # misc
 .DS_Store

@@ -7,6 +7,7 @@ import PresentationCard from './components/presentation';
 import Products from './components/products';
 import People from './components/people';
 import NewsletterForm from './components/newsletter';
+import NewsletterVerifiedForm from './components/newsletterVerified';
 
 function App() {
 	return (
@@ -25,6 +26,9 @@ function App() {
 					</Route>
 					<Route exact path='/newsletter'>
 						<NewsletterForm></NewsletterForm>
+					</Route>
+					<Route exact path='/newsletterVerified/:id'>
+						<NewsletterVerifiedForm></NewsletterVerifiedForm>
 					</Route>
 				</Switch>
 			</div>

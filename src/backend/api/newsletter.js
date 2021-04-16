@@ -3,7 +3,8 @@ const newsletterModel = require('../models/newsletter');
 const db = require('../connectionDB');
 
 /* Nodemailer dependencies. */
-const sendEmail = require('./../nodemailer/verification');
+const firstEmail = require('./../nodemailer/verification');
+const verifiedUser = require('./../nodemailer/verifiedUser');
 
 const router = express.Router();
 
@@ -24,7 +25,7 @@ router.get('/get', cors(corsOptions), (req, res) => {
 router.post('/add', cors(corsOptions), (req, res) => {
 	db.connect();
 	const { email, name, surname } = req.body;
-	let creationID;
+	let newUserID;
 	const newsletter = new newsletterModel({
 		email: email,
 		name: name,
@@ -35,36 +36,47 @@ router.post('/add', cors(corsOptions), (req, res) => {
 	newsletter
 		.save()
 		.then(result => {
-			creationID = result._id;
+			newUserID = result._id;
+			db.close();
 			//res.json(result);
 		})
 		.catch(err => console.error(err));
-	/* Waits until the variable ID is set on the line 49. */
-	function waitForElement() {
-		if (typeof creationID !== 'undefined') {
-			sendEmail(email, '¡Bienvenido! (correo de verificación)', creationID, name, surname, '../nodemailer/views/verification.html');
+	function waitForNewUserID() {
+		if (typeof newUserID !== 'undefined' && newUserID !== '') {
+			firstEmail(email, '¡Bienvenido! (correo de verificación)', newUserID, name, surname, '../nodemailer/views/verification.html');
 		} else {
-			setTimeout(waitForElement, 250);
+			setTimeout(waitForNewUserID, 250);
 		}
 	}
-	waitForElement();
+	waitForNewUserID();
 });
 
 router.put('/verify/:id', cors(corsOptions), (req, res) => {
 	db.connect();
+	let updatedUser;
 	newsletterModel
-		.findByIdAndUpdate({ id: req.params.id }, { verified: true })
+		.findByIdAndUpdate({ _id: req.params.id }, { verified: true })
 		.then(result => {
 			res.json(result);
+			updatedUser = result;
 			db.close();
 		})
 		.catch(err => console.error(err));
+
+	function waitForUpdatedUser() {
+		if (updatedUser) {
+			verifiedUser(updatedUser.email, '¡Su correo ha sido verificado!', updatedUser.id, updatedUser.name, updatedUser.surname, '../nodemailer/views/verifiedUser.html');
+		} else {
+			setTimeout(waitForUpdatedUser, 250);
+		}
+	}
+	waitForUpdatedUser();
 });
 
 router.delete('/delete/:id', cors(corsOptions), (req, res) => {
 	db.connect();
 	newsletterModel
-		.findByIdAndRemove({ id: req.params.id })
+		.findByIdAndRemove({ _id: req.params.id })
 		.then(result => {
 			res.json(result);
 			db.close();
