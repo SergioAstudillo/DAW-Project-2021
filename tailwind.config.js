@@ -15,10 +15,16 @@ module.exports = {
 				nunito: ['Nunito', 'sans-serif'],
 				josefin: ['Josefin Sans', 'sans-serif'],
 			},
+			height: {
+				almostFull: '90vh',
+			},
+			padding: {
+				half: '15%',
+			},
 		},
 	},
 	variants: {
 		extend: {},
 	},
-	plugins: [require('./src/tailwindPlugins/hamburgerMenu')],
+	plugins: [require('./src/tailwindPlugins/hamburgerMenu'), require('./src/tailwindPlugins/text-shadow')],
 };

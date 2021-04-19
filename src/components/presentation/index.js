@@ -33,19 +33,19 @@ class PresentationCard extends React.Component {
 
 		if (this.state.isLoading === false) {
 			return (
-				<section className='w-screen mt-5 font-josefin'>
-					<h1 className='text-xl uppercase underline'>Bienvenido/a a mi web.</h1>
-					<img src={owner.img} alt='Foto personal' className='w-1/2 h-1/2 rounded-full block mx-auto mt-3 mb-3 border-8 border-custom-darkEnf border-opacity-50'></img>
-					<div className=''>
-						<h1 className='text-xl'>
+				<section className='w-screen mt-5 font-josefin lg:h-almostFull lg:mt-0 lg:flex lg:flex-wrap lg:align-middle lg:content-center'>
+					<h1 className='text-xl uppercase underline lg:text-2xl lg:w-screen lg:self-start'>Bienvenido/a a mi web.</h1>
+					<img src={owner.img} alt='Foto personal' className='w-1/2 h-1/2 rounded-full block mx-auto mt-3 mb-3 border-8 border-custom-darkEnf border-opacity-50 lg:w-1/6 lg:h-auto'></img>
+					<div className='presentationText lg:text-center'>
+						<h1 className='text-xl lg:text-2xl'>
 							{owner.name} {owner.surname}
 						</h1>
-						<p className='text-sm mx-5'>{owner.shortDescription}</p>
+						<p className='text-base mx-5 lg:text-lg lg:w-1/2 lg:mx-auto'>{owner.shortDescription}</p>
 					</div>
 				</section>
 			);
 		} else {
-			return <h1>Cargando, espere unos instantes...</h1>;
+			return <h1 className='w-screen block mt-3 px-3 text-center text-xl font-josefin'>Cargando, espere unos instantes...</h1>;
 		}
 	}
 }

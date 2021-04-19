@@ -52,7 +52,7 @@ class NewsletterVerified extends React.Component {
 		const { isDone, message } = this.state;
 		let styleFirstParagraph = '';
 		if (message !== '') {
-			styleFirstParagraph = 'my-2 mx-3 whitespace-pre-line';
+			styleFirstParagraph = 'my-2 mx-3 whitespace-pre-line lg:text-xl';
 		} else {
 			styleFirstParagraph = '';
 		}

@@ -75,16 +75,16 @@ class NewsletterForm extends React.Component {
 	render() {
 		const { email, name, surname, message } = this.state;
 		let styleFirstParagraph = '';
-		let styleTitle = 'my-2 underline uppercase';
-		let styleInput = 'rounded text-center w-3/4 px-3 border border-gray-600';
-		let styleButton = 'my-2 h-6 max-h-10 bg-custom-darkEnf text-white tex uppercase px-3 rounded-3xl border border-gray-600';
+		let styleTitle = 'my-2 underline uppercase lg:text-2xl';
+		let styleInput = 'rounded text-center w-3/4 px-3 border border-gray-600 lg:text-lg';
+		let styleButton = 'my-2 h-6 max-h-10 bg-custom-darkEnf text-white text-shadow-lg text-center uppercase px-3 rounded-full border border-gray-600 lg:block lg:mx-auto lg:w-1/5 lg:text-xl focus:outline-none focus:ring-2';
 		let styleLink = 'hidden';
 		if (message !== '') {
-			styleFirstParagraph = 'mt-2 mx-3 whitespace-pre-line';
+			styleFirstParagraph = 'mt-2 mx-3 whitespace-pre-line text-base lg:text-xl';
 			styleTitle += ' hidden';
 			styleInput += ' hidden';
-			styleButton += ' hidden';
-			styleLink = 'my-2 py-1 text-center bg-custom-darkEnf text-white uppercase px-3 rounded-3xl border border-gray-600 inline-block';
+			styleButton += ' hidden lg:hidden';
+			styleLink = 'my-2 py-1 text-center bg-custom-darkEnf text-white uppercase px-3 rounded-3xl border border-gray-600 inline-block lg:text-xl focus:outline-none focus:ring-2 lg:py-0';
 		} else {
 			styleFirstParagraph = '';
 		}
