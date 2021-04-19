@@ -50,7 +50,7 @@ class NewsletterForm extends React.Component {
 				.then(result => result.json())
 				.then(info => {
 					if (info) {
-						console.log(info);
+						console.log(info.email);
 					}
 				});
 		}

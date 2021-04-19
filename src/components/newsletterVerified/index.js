@@ -42,7 +42,7 @@ class NewsletterVerified extends React.Component {
 				})
 				.then(info => {
 					if (info) {
-						console.log(info);
+						console.log(info.email);
 					}
 				});
 		}

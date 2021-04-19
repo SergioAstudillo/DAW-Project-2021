@@ -1,4 +1,4 @@
-//Import express and dotenv.
+//Import express, dotenv and cors.
 const express = require('express');
 const app = express();
 require('dotenv').config();
@@ -8,6 +8,7 @@ const cors = require('cors');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+//Use CORS to restrict the requests to the API to a single domain (localhost:3000).
 app.use(cors());
 
 /* Starts the server and listen for changes. */

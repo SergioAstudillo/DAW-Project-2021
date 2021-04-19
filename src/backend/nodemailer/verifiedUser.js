@@ -39,6 +39,7 @@ function verifiedUser(email, subject, ID, name, userSurname, relativePath) {
 	transporter.sendMail(mailOptions, (error, info) => {
 		if (error) {
 			console.log(`No se ha podido enviar el correo: ${error.message}`);
+			console.log(`Error: ${error.stack}`);
 		} else {
 			console.log(`Se ha enviado el correo a la dirección: ${email} de forma satisfactoria.`);
 		}
