@@ -9,6 +9,7 @@ function connect() {
 		})
 		.catch(err => console.log(err));
 }
+//Close the connection with the DB.
 function close() {
 	mongoose.connection.close();
 	console.log('Connection closed.');

@@ -1,5 +1,7 @@
+/* Import DOTENV here so it gets imported in the API */
 require('dotenv').config();
 
+/* Whitelisted URLs for CORS */
 const whitelist = [
 	'http://localhost:3000',
 	'http://localhost:3000/',
@@ -10,6 +12,7 @@ const whitelist = [
 	'http://localhost:3000/newsletterUnsubscribe',
 ];
 
+/* Set the origin, methods and optionsSuccessStatus on cors() */
 const corsOptions = {
 	origin: function (origin, callback) {
 		if (whitelist.indexOf(origin) !== -1) {

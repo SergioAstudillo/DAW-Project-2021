@@ -13,7 +13,7 @@ app.use(cors());
 
 /* Starts the server and listen for changes. */
 app.listen(process.env.BACKEND_PORT, () => {
-	console.log(`Servidor corriendo en el puerto ${process.env.BACKEND_PORT}`);
+	console.log(`Server running on port: ${process.env.BACKEND_PORT}`);
 });
 
 //Import the API for each collection.
