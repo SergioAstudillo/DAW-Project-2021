@@ -20,7 +20,7 @@ class PresentationCard extends React.Component {
 	render() {
 		let owner = {};
 		this.state.people.forEach(person => {
-			if (person.name === 'Elena') {
+			if (person.name === 'John') {
 				owner = {
 					name: person.name,
 					surname: person.surname,
