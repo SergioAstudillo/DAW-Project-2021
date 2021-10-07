@@ -1,72 +1,62 @@
-# Getting Started with Create React App
+# <u>DAW Project 2021:</u>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Full-stack web app made for the final degree project using React, Tailwind CSS, Express, MongoDB and Nodemailer (with some handlebars - HBS).
 
-## Available Scripts
+### <u>Description:</u>
 
-In the project directory, you can run:
+SPA made during my studies at [IlernaFP](https://www.ilerna.es/es) (Ilerna Online).
+It uses [React](https://reactjs.org/) to manipulate the DOM and update it each time a change is detected.
 
-### `yarn start`
+The styling has been made using [TailwindCSS](https://tailwindcss.com/), it's a (mobile first) CSS framework. Thanks to the breakpoints (sm, md, lg, xl, 2xl) that Tailwind offers, I made the web fully responsive, much faster than with SCSS/CSS.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Everything on the app has been made using [JavaScript](https://developer.mozilla.org/docs/Web/JavaScript).
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+The newsletter has been made using [Nodemailer](https://nodemailer.com/about/), a nodeJS module used to send mail. In my case I used some HBS dynamic templates to send as HTML emails.
 
-### `yarn test`
+### <u>How to test/execute the app?:</u>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Use the command **`npm i`** or **`yarn add`** to install all the necessary node modules.
+Then you should use your MongoDB GUI (or shell) of preference, in my case it's MongoDB Compass. Here you have to create a DB named **`proyectoDAW2021`** and 3 collections inside the new DB:
+- **`newsletter`**
+- **`people`**
+- **`products`**
 
-### `yarn build`
+Once you create the 3 collections, you have to import the data inside them. The JSON files are located inside the db folder, you have to import the corresponding JSON file, the newsletter.json file in the newsletter collection, etc..
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Then, you must create a .env file in the root of the project. Inside this file you should type your [DB URL](https://docs.mongodb.com/manual/reference/connection-string/) key using the following format:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**`DB_URL=YOUR_MONGODB_CONNECTION_STRING\proyectoDAW2021`**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**`NOTE:`** in case you want to use or test the mail function you will have to create 3 new keys inside the .env and fill them with your mail provider and account info:
+- **`EMAIL_HOST=EMAIL_HOST(IT'S MOST LIKELY A DOMAIN)`**
+- **`EMAIL_USER=YOUR_EMAIL_USERNAME(INCLUDING THE @ PART)`**
+- **`EMAIL_PASSWORD=YOUR_EMAIL_PASSWORD`**
 
-### `yarn eject`
+Once you have completed the previous steps you can execute the following command in the root folder:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**`yarn start`** or **`npm start`**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This command runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) once you execute the command to view it in the browser. (It usually opens a new tab automatically in your default browser once you use the command).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### <u>Preview (desktop view):</u>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+##### **_Presentation component:_**
 
-## Learn More
+![Photo can't be loaded.](https://i.imgur.com/0Fpa5SQ.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+##### **_Products component:_**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Photo can't be loaded.](https://i.imgur.com/E1YVvjI.png)
 
-### Code Splitting
+##### **_People component:_**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![Photo can't be loaded.](https://i.imgur.com/KiWrhAL.png)
 
-### Analyzing the Bundle Size
+##### **_Newsletter component:_**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![Photo can't be loaded.](https://i.imgur.com/QT9dAJO.png)
 
-### Making a Progressive Web App
+### <u>More Info:</u>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-# This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-# DAW Project 2021
+<small>This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).</small>
