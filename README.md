@@ -37,7 +37,7 @@ Once you have completed the previous steps you can execute the following command
 **`yarn start`** or **`npm start`**
 
 This command runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) once you execute the command to view it in the browser. (It usually opens a new tab automatically in your default browser once you use the command).
+Open [http://localhost:3000](http://localhost:3000) once you execute the command to view it in the browser. (It usually opens a new tab automatically in your default browser when you use the command).
 
 ### <u>Preview (desktop view):</u>
 
