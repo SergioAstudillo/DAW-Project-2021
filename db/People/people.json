@@ -1,0 +1,20 @@
+[{
+  "_id": {
+    "$oid": "604fbcf2a8140157f9ea0d48"
+  },
+  "name": "John",
+  "description": "Censored for public repo.",
+  "instagram": "https://www.instagram.com/",
+  "surname": "Doe",
+  "img": "./../../assets/portraits/ownerPortrait.png",
+  "shortDescription": "Aquí podrás ver los distintos productos que distribuyo a través de Herbalife. También podrás conocer un poco más de las personas que trabajan en este proyecto y suscribirte a una newsletter a través de la cual recibirás noticias sobre productos y demás temas de interés."
+},{
+  "_id": {
+    "$oid": "605d057c301a134bd3fafbb8"
+  },
+  "name": "Cristiano",
+  "description": "El campeón de fútbol Cristiano Ronaldo, patrocinado por Herbalife, nos dice que si no entrena y alimenta al cuerpo como es debido, no será el mejor. Y no cabe duda… Ronaldo quiere ser el mejor.",
+  "instagram": "https://www.instagram.com/cristiano/",
+  "surname": "Ronaldo",
+  "img": "./../../assets/portraits/cristianoRonaldo.jpg"
+}]

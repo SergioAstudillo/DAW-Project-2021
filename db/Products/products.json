@@ -1,0 +1,37 @@
+[{
+  "_id": {
+    "$oid": "604fb8cea8140157f9ea0d43"
+  },
+  "title": "Batido Formula 1 - 550g",
+  "description": "La Nueva Generación de Fórmula 1 contiene 25 vitaminas y minerales como magnesio, el cual contribuye al metabolismo energético normal. Disfrutar del Fórmula 1 como un nutritivo desayuno, comida o cena para apoyar un estilo de vida activo y los objetivos de control de peso.",
+  "flavor": "Plátano, Café Latte, Manzana y Especias, Menta y Chocolate, Frutos del Bosque, Delicia de Fresa, Galleta Crujiente, Crema de Vainilla, Chocolate Cremoso",
+  "price": 30.09,
+  "img": "./../../assets/products/Formula1Fresa.png"
+},{
+  "_id": {
+    "$oid": "604fb995a8140157f9ea0d44"
+  },
+  "title": "Bebida Instantánea de Hierbas - 100g",
+  "description": "Una bebida refrescante baja en calorías, preparada con té negro y verde.",
+  "flavor": "Original, Limón, Frambuesa, Melocotón",
+  "price": 36.64,
+  "img": "./../../assets/products/BebidaInstantaneaDeHierbasOriginal.png"
+},{
+  "_id": {
+    "$oid": "604fba48a8140157f9ea0d45"
+  },
+  "title": "Collagen Skin Booster - 171g",
+  "description": "Es un complemento alimenticio con un refrescante sabor a fresa y limón. Contiene péptidos bioactivos de colágeno, llamados Verisol® P, que ha demostrado científicamente que reduce las arrugas del contorno de los ojos y mejora la elasticidad de la piel después de 4 semanas. Este producto tiene alto contenido en vitaminas y minerales para contribuir al bienestar de la piel, el cabello y las uñas.",
+  "flavor": "Fresa y limón",
+  "price": 40.5,
+  "img": "./../../assets/products/ColagenoFresaLimon.png"
+},{
+  "_id": {
+    "$oid": "604fbaf2a8140157f9ea0d46"
+  },
+  "title": "Bebida con Proteínas en Polvo - 588g",
+  "description": "La manera perfecta de aumentar la toma de proteínas. Este versátil producto puede ser tomado de dos deliciosas maneras. Prepáralo como un sabroso aperitivo con solo 108 kcal por ración y con alto contenido en proteínas, o añádelo a tu batido favorito de Fórmula 1 para una cremosa comida.",
+  "flavor": "Vainilla",
+  "price": 36.1,
+  "img": "./../../assets/products/BebidaProteinas.png"
+}]

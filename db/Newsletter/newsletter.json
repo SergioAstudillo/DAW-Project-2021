@@ -1,0 +1,10 @@
+[{
+  "_id": {
+    "$oid": "60806652a8e8e297ed9a95e8"
+  },
+  "name": "John",
+  "surname": "Doe",
+  "subscribed": true,
+  "verified": true,
+  "email": "johndoe@gmail.com"
+}]
