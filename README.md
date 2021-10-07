@@ -43,7 +43,7 @@ Open [http://localhost:3000](http://localhost:3000) once you execute the command
 
 ##### **_Presentation component:_**
 
-![Photo can't be loaded.](https://i.imgur.com/0Fpa5SQ.png)
+![Photo can't be loaded.](https://i.imgur.com/waWAizJ.png)
 
 ##### **_Products component:_**
 
@@ -51,7 +51,7 @@ Open [http://localhost:3000](http://localhost:3000) once you execute the command
 
 ##### **_People component:_**
 
-![Photo can't be loaded.](https://i.imgur.com/KiWrhAL.png)
+![Photo can't be loaded.](https://i.imgur.com/3a0F7SQ.png)
 
 ##### **_Newsletter component:_**
 
